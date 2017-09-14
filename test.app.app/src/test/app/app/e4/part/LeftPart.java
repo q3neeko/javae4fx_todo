@@ -18,7 +18,7 @@ import test.app.app.ui.FXMLUtil;
 import test.app.app.ui.left.LeftVM;
 
 public class LeftPart {
-//TODO commit
+//TODO commit22222
 	@PostConstruct
 	private void postConstruct(BorderPane parent, MApplication app, @LocalInstance FXMLLoader loader) {
 	
