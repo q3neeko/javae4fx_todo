@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_YfpnkZWMEeeQC5hcGA5pEw" elementId="org.eclipse.e4.application" bindingContexts="_YfpnkJWMEeeQC5hcGA5pEw">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_ulQz0JWMEeeQC5hcGA5pEw" elementId="test.app.app.trimmedwindow.mainwindows" label="" x="50" y="50" width="800" height="600">
+    <children xsi:type="basic:PartSashContainer" xmi:id="_0NX2YJWNEeeQC5hcGA5pEw" elementId="test.app.app.partsashcontainer.maincontainer" horizontal="true">
+      <children xsi:type="basic:Part" xmi:id="_1LxYUJWNEeeQC5hcGA5pEw" elementId="test.app.app.part.left" containerData="" contributionURI="bundleclass://test.app.app/test.app.app.e4.part.LeftPart"/>
+      <children xsi:type="basic:Part" xmi:id="_3dimoJWNEeeQC5hcGA5pEw" elementId="test.app.app.part.right" contributionURI="bundleclass://test.app.app/test.app.app.e4.part.RightPart"/>
+    </children>
+    <mainMenu xmi:id="_rpQ_8JWQEeeQC5hcGA5pEw" elementId="test.app.app.menu.0">
+      <children xsi:type="menu:Menu" xmi:id="_zEmwIJWQEeeQC5hcGA5pEw" elementId="test.app.app.menu.edit" label="Edit">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_MonV4JWREeeQC5hcGA5pEw" elementId="test.app.app.handledmenuitem.new" label="New" command="_GOEUUJWREeeQC5hcGA5pEw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_O9YN0JWREeeQC5hcGA5pEw" elementId="test.app.app.handledmenuitem.edit" label="Edit" command="_IRAccJWREeeQC5hcGA5pEw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_XHBOcJWREeeQC5hcGA5pEw" elementId="test.app.app.handledmenuitem.delete" label="Delete" command="_JyTQEJWREeeQC5hcGA5pEw"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_AnRq8JWREeeQC5hcGA5pEw" elementId="test.app.app.trimbar.0">
+      <children xsi:type="menu:ToolBar" xmi:id="_BpBb0JWREeeQC5hcGA5pEw" elementId="test.app.app.toolbar.trimbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_bxh1wJWREeeQC5hcGA5pEw" elementId="test.app.app.handledtoolitem.new" label="New" command="_GOEUUJWREeeQC5hcGA5pEw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_mJXMQJWREeeQC5hcGA5pEw" elementId="test.app.app.handledtoolitem.edit" label="Edit" command="_IRAccJWREeeQC5hcGA5pEw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_op094JWREeeQC5hcGA5pEw" elementId="test.app.app.handledtoolitem.delete" label="Delete" command="_JyTQEJWREeeQC5hcGA5pEw"/>
+      </children>
+    </trimBars>
+  </children>
+  <variables>selected_todo</variables>
+  <handlers xmi:id="_pdryAJW4EeeQC5hcGA5pEw" elementId="test.app.app.handler.edit" contributionURI="bundleclass://test.app.app/test.app.app.e4.handler.EditHandler" command="_IRAccJWREeeQC5hcGA5pEw"/>
+  <handlers xmi:id="_92Dp0JisEeeQbs84yoYqQw" elementId="test.app.app.handler.new" contributionURI="bundleclass://test.app.app/test.app.app.e4.handler.NewHandler" command="_GOEUUJWREeeQC5hcGA5pEw"/>
+  <rootContext xmi:id="_YfpnkJWMEeeQC5hcGA5pEw" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_YfpnkpWMEeeQC5hcGA5pEw" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_Yfpnk5WMEeeQC5hcGA5pEw" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_GOEUUJWREeeQC5hcGA5pEw" elementId="test.app.app.command.new" commandName="New"/>
+  <commands xmi:id="_IRAccJWREeeQC5hcGA5pEw" elementId="test.app.app.command.edit" commandName="Edit"/>
+  <commands xmi:id="_JyTQEJWREeeQC5hcGA5pEw" elementId="test.app.app.command.delete" commandName="Delete"/>
+  <addons xmi:id="_YfpnlJWMEeeQC5hcGA5pEw" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_YfpnlZWMEeeQC5hcGA5pEw" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_YfpnlpWMEeeQC5hcGA5pEw" elementId="org.eclipse.fx.ui.keybindings.e4.service" contributionURI="bundleclass://org.eclipse.fx.ui.keybindings.e4/org.eclipse.fx.ui.keybindings.e4.BindingServiceAddon"/>
+  <addons xmi:id="_Yfpnl5WMEeeQC5hcGA5pEw" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_YfpnmJWMEeeQC5hcGA5pEw" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_YfpnmZWMEeeQC5hcGA5pEw" elementId="org.eclipse.fx.ui.keybindings.e4.model" contributionURI="bundleclass://org.eclipse.fx.ui.keybindings.e4/org.eclipse.fx.ui.keybindings.e4.BindingProcessingAddon"/>
+  <addons xmi:id="_YfpnmpWMEeeQC5hcGA5pEw" elementId="org.eclipse.e4.ui.workbench.addons.HandlerProcessingAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+</application:Application>

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Datasource
+Bundle-SymbolicName: test.app.app.datasource
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: test.app.app.model
+Export-Package: test.app.app.datasource.local
