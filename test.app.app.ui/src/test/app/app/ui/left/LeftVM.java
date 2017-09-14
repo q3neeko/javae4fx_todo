@@ -1,8 +1,11 @@
 package test.app.app.ui.left;
 
+import java.util.Collections;
+
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.fx.core.command.CommandService;
 import org.eclipse.fx.core.di.ContextValue;
 
 import javafx.beans.property.Property;
@@ -12,7 +15,7 @@ import test.app.app.model.TodoElement;
 import test.app.app.ui.AppConstants;
 
 public class LeftVM {
-
+	@Inject private CommandService commandService;
 	@Inject private TodoDataSource ds;
 	private ObservableList<TodoElement> todolist;
 	
@@ -30,5 +33,11 @@ public class LeftVM {
 
 	public Property<TodoElement> selectedItemProperty() {
 		return selected;
+	}
+
+	public void editTodo() {
+		if(commandService.canExecute(AppConstants.EDIT_TODO_COMMAND,Collections.emptyMap())) {
+			commandService.execute(AppConstants.EDIT_TODO_COMMAND,Collections.emptyMap());
+		}
 	}
 }

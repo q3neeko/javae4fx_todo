@@ -23,6 +23,12 @@ public class LeftController {
 		col2.setCellValueFactory(e-> e.getValue().dueDateProperty());
 //		col2.setCellFactory(col-> );
 		vm.selectedItemProperty().bind(table.getSelectionModel().selectedItemProperty());
+
+		table.setOnMouseClicked(e -> {
+			if (e.getClickCount() == 2) {
+				vm.editTodo();
+			}
+		});
 	}
 	
 }
