@@ -17,10 +17,8 @@ import test.app.app.ui.edit.TodoEditVM;
 
 public class EditHandler {
 
-	int counter = 0;
 	@CanExecute
 	public boolean canExecute(@Optional @Named(value = AppConstants.SELECTED_TODO) TodoElement selected) {
-		System.err.println("Edit "+ ++counter);
 		return selected != null;
 	}
 	

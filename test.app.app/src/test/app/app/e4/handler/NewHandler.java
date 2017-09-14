@@ -12,10 +12,8 @@ import test.app.app.ui.edit.TodoEditVM;
 
 public class NewHandler {
 	
-	int counter = 0;
 	@CanExecute
 	public boolean canExecute() {
-		System.err.println("New "+ ++counter);
 		return true;
 	}
 	
