@@ -9,7 +9,9 @@ import test.app.app.model.TodoElement;
 
 public class TodoEditService extends Service<Void> {
 	
-	@Inject TodoDataSource datasource = new TodoDataSource();
+	//TODO CHAGE FROM NEW TO INJECTED DS FROM LEFTPART
+//	@Inject TodoDataSource datasource = new TodoDataSource();
+	@Inject TodoDataSource datasource;
 
 //	private Todo updateTodo = null;
 	private TodoElement editTodo = new TodoElement();

@@ -1,8 +1,47 @@
 package test.app.app.model;
 
-import java.util.List;
+import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "todolist")
 public class TodoList {
-	List<TodoElement> l;
-	int size;
+	
+    private ArrayList<TodoElement> list;
+    private int id;
+    
+    @XmlElement(name = "todoelement")
+    public ArrayList<TodoElement> getList() {
+        return list;
+    }
+    
+    public void setList(ArrayList<TodoElement> todoList) {
+        this.list = todoList;
+    }
+
+    public int getSize() {
+    	return this.list.size();
+    }
+    
+    @XmlAttribute
+    public void setId(int id) {
+    	this.id = id;
+    }
+    
+    public int getId() {
+    	return this.id;
+    }
+    
+    public TodoElement getElement(int index) {
+    	return this.list.get(index);
+    }
+    
+    public void setElement(TodoElement todo) {
+    	this.list.add(todo);
+    }
 }
+
+
+

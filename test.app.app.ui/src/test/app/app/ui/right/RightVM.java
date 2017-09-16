@@ -34,7 +34,7 @@ public class RightVM {
 		subscription.add(FXObservableUtil.onChange(selected, nV -> {
 			if (nV != null) {
 				title.set(nV.getTitle());
-				date.setValue(nV.getDueDate());
+				date.setValue(nV.getLocalDate());
 			}
 		}));
 		
