@@ -9,10 +9,11 @@ import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.model.application.MApplication;
 
-import test.app.app.e4.part.TodoDeleteDialog;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import test.app.app.model.TodoElement;
 import test.app.app.ui.AppConstants;
-import test.app.app.ui.delete.TodoDeleteVM;
 import test.app.app.ui.edit.TodoEditService;
 
 public class DeleteHandler {
@@ -30,10 +31,16 @@ public class DeleteHandler {
 			TodoEditService service = ContextInjectionFactory.make(TodoEditService.class, child);
 			service.setDeleteTodo(selected);
 			child.set(TodoEditService.class, service);
-			TodoDeleteVM vm = ContextInjectionFactory.make(TodoDeleteVM.class, child);
-			child.set(TodoDeleteVM.class, vm);
-			TodoDeleteDialog dialog = ContextInjectionFactory.make(TodoDeleteDialog.class, child);
-			dialog.showAndWait();
+//			TodoDeleteVM vm = ContextInjectionFactory.make(TodoDeleteVM.class, child);
+//			child.set(TodoDeleteVM.class, vm);
+//			TodoDeleteDialog dialog = ContextInjectionFactory.make(TodoDeleteDialog.class, child);
+//			dialog.showAndWait();
+			Alert alert = new Alert(AlertType.CONFIRMATION, "Delete " + selected.getTitle() + " " + selected.getDueDate() + " ?", ButtonType.YES, ButtonType.CANCEL);
+			alert.showAndWait();
+
+			if (alert.getResult() == ButtonType.YES) {
+			    service.start();
+			}
 		}  finally {
 			child.dispose();
 		} 
