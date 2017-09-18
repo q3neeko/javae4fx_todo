@@ -16,10 +16,16 @@ public class TodoEditService extends Service<Void> {
 //	private Todo updateTodo = null;
 	private TodoElement editTodo = new TodoElement();
 	private boolean updateMode = false;
+	private boolean deleteMode = false;
 	
 	public void setUpdateTodo(TodoElement todo) {
 		editTodo = todo.copy();
 		updateMode  = true;
+	}
+	
+	public void setDeleteTodo(TodoElement todo) {
+		editTodo = todo.copy();
+		deleteMode  = true;
 	}
 	
 	@Override
@@ -27,8 +33,10 @@ public class TodoEditService extends Service<Void> {
 		return new Task<Void>() {
 			@Override
 			protected Void call() throws Exception {
-				if (updateMode) {
+				if (updateMode && !deleteMode) {
 					updateTodo();
+				} else if(!updateMode && deleteMode) {
+					deleteTodo();
 				} else {
 					saveNewTodo();
 				}
@@ -38,13 +46,18 @@ public class TodoEditService extends Service<Void> {
 	}
 	
 	private void updateTodo(){
-		System.out.println("update! "+editTodo);
+		System.out.println("update todo! "+editTodo);
 		datasource.update(editTodo);
 	}
 	
 	private void saveNewTodo() {
 		System.out.println("new todo! " + editTodo);
 		datasource.saveNewTodo(editTodo);
+	}
+	
+	private void deleteTodo() {
+		System.out.println("delete todo! " + editTodo);
+		datasource.deleteTodo(editTodo);
 	}
 	
 	public TodoElement getTodo() {

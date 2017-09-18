@@ -3,13 +3,14 @@ package test.app.app.datasource.local;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import test.app.app.model.TodoElement;
@@ -42,8 +43,25 @@ public class TodoDataSource {
 		um = context.createUnmarshaller();
 		f = new File(path);
 		if(f.exists()) {
+			try {
 	        TodoList todoListXML = (TodoList) um.unmarshal(new FileReader(f));
-	        todoList = FXCollections.observableArrayList(todoListXML.getList());
+	        todoList.addAll(todoListXML.getList());
+			} catch (Exception e) {
+				System.err.println("Failed retreive todos from XML or file is empty...");
+				todoList.clear();
+			}
+	        
+//	        List <TodoElementXML> xmlList = null;
+//	        List <String> stringList = null;
+//	        /*
+//	         * foreach... 
+//	         */
+//	        stringList.addAll(xmlList.stream().map(e -> e.getTitle()).collect(Collectors.toList()));
+//	        Optional<TodoElementXML> findFirst = xmlList.stream().filter(e -> e.getTitle().equals("eee")).findFirst();
+//	        if (findFirst.isPresent()) {
+//	        	//
+//	        }
+	        //todoList = FXCollections.observableArrayList(todoListXML.getList());
 		}
 		else {
 //			boolean successful = f.getParentFile().mkdirs();
@@ -52,7 +70,7 @@ public class TodoDataSource {
 //					if(successful) {
 //						System.out.println("todolist.xml created!");
 //					}
-//					else
+//					
 //						System.out.println("failed trying to create the file");
 //			}
 //			else
@@ -61,9 +79,10 @@ public class TodoDataSource {
 		}
 	}
 	
-	public void sendDataToXML(TodoElement todo) throws JAXBException, IOException {
+	public void sendDataToXML() throws JAXBException, IOException {
 		TodoList list = new TodoList();
-		list.setElement(todo);
+		list.setList(new ArrayList<TodoElement>(todoList.stream().collect(Collectors.toList())));
+//		list.setElement(new TodoElement("TITLE", LocalDate.now()));
 		m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         m.marshal(list, f);
@@ -75,44 +94,61 @@ public class TodoDataSource {
 
 	private int findTodoInList(TodoElement _changedTodo) {
 		for (TodoElement todo : todoList) {
-			if(todo.getId() == _changedTodo.getId()){
+			if(todo.getId().equals(_changedTodo.getId())) {
 				return todoList.indexOf(todo);
 			}
 		}
 		return -1;
 	}
 	
-	public void deleteTodo(TodoElement _todo) {
-		TodoElement todo = find(_todo.getId());
-		delete(todo);
-		
-		int i = findTodoInList(_todo);
-		Platform.runLater(() -> {
-			todoList.remove(i);
-		});
-	}
+//	public void deleteTodo(TodoElement _todo) {
+//		TodoElement todo = find(_todo.getId());
+//		delete(todo);
+//		
+//		int i = findTodoInList(_todo);
+//		Platform.runLater(() -> {
+//			todoList.remove(i);
+//		});
+//	}
+//
+//	private void delete(TodoElement todo) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
-	private void delete(TodoElement todo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private TodoElement find(int id) {
-		// TODO Auto-generated method stub
-		return null;
+//	private TodoElement find(int id) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+	
+	public void deleteTodo(TodoElement todo) {
+		int i = findTodoInList(todo);
+		todoList.remove(i);
+		try {
+			sendDataToXML();
+		} catch (JAXBException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void update(TodoElement editTodo) {
 		// TODO Auto-generated method stub
 		int i = findTodoInList(editTodo);
 		todoList.set(i, editTodo);
+		try {
+			sendDataToXML();
+		} catch (JAXBException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void saveNewTodo(TodoElement editTodo) {
 		// TODO Auto-generated method stub
 		todoList.add(editTodo);
 		try {
-			sendDataToXML(editTodo);
+			sendDataToXML();
 		} catch (JAXBException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

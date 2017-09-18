@@ -23,6 +23,7 @@
   <variables>selected_todo</variables>
   <handlers xmi:id="_pdryAJW4EeeQC5hcGA5pEw" elementId="test.app.app.handler.edit" contributionURI="bundleclass://test.app.app/test.app.app.e4.handler.EditHandler" command="_IRAccJWREeeQC5hcGA5pEw"/>
   <handlers xmi:id="_92Dp0JisEeeQbs84yoYqQw" elementId="test.app.app.handler.new" contributionURI="bundleclass://test.app.app/test.app.app.e4.handler.NewHandler" command="_GOEUUJWREeeQC5hcGA5pEw"/>
+  <handlers xmi:id="_NKmHcJu5EeeOzLSRJZHpxQ" elementId="test.app.app.handler.DeleteHandler" contributionURI="bundleclass://test.app.app/test.app.app.e4.handler.DeleteHandler" command="_JyTQEJWREeeQC5hcGA5pEw"/>
   <rootContext xmi:id="_YfpnkJWMEeeQC5hcGA5pEw" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_YfpnkpWMEeeQC5hcGA5pEw" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_Yfpnk5WMEeeQC5hcGA5pEw" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>

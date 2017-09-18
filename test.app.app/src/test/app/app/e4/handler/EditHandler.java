@@ -21,7 +21,7 @@ public class EditHandler {
 	public boolean canExecute(@Optional @Named(value = AppConstants.SELECTED_TODO) TodoElement selected) {
 		return selected != null;
 	}
-	
+
 	@Execute
 	public void execute(MApplication app, @Named(value = AppConstants.SELECTED_TODO) TodoElement selected) {
 		IEclipseContext context = app.getContext();
@@ -34,8 +34,8 @@ public class EditHandler {
 			child.set(TodoEditVM.class, vm);
 			TodoEditDialog dialog = ContextInjectionFactory.make(TodoEditDialog.class, child);
 			dialog.showAndWait();
-		} finally {
+		}  finally {
 			child.dispose();
-		}
+		} 
 	}
 }

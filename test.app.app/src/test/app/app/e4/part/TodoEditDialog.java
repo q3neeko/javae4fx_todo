@@ -1,7 +1,5 @@
 package test.app.app.e4.part;
 
-import java.io.IOException;
-
 import javax.annotation.PostConstruct;
 
 import org.eclipse.fx.core.di.LocalInstance;
@@ -24,7 +22,7 @@ public class TodoEditDialog extends Dialog<TodoElement> {
 		loader.setLocation(FXMLUtil.getPlatformUrl(AppConstants.PLUGIN_ID, "/fxml/editDialog.fxml"));
 		try {
 			getDialogPane().setContent((Node) loader.load());
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 

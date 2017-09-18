@@ -9,7 +9,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "todolist")
 public class TodoList {
 	
-    private ArrayList<TodoElement> list;
+	
+    private ArrayList<TodoElement> list;// = new ArrayList<>();
     private int id;
     
     @XmlElement(name = "todoelement")

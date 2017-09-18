@@ -11,12 +11,12 @@ import test.app.app.ui.edit.TodoEditService;
 import test.app.app.ui.edit.TodoEditVM;
 
 public class NewHandler {
-	
+
 	@CanExecute
 	public boolean canExecute() {
 		return true;
 	}
-	
+
 	@Execute
 	public void execute(MApplication app) {
 		IEclipseContext context = app.getContext();
@@ -28,6 +28,8 @@ public class NewHandler {
 			child.set(TodoEditVM.class, vm);
 			TodoEditDialog dialog = ContextInjectionFactory.make(TodoEditDialog.class, child);
 			dialog.showAndWait();
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			child.dispose();
 		}

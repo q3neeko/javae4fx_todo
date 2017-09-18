@@ -1,15 +1,14 @@
 package test.app.app.model;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -19,15 +18,16 @@ import javafx.beans.property.StringProperty;
 @XmlType(propOrder = { "id", "title", "dueDate"})
 public class TodoElement {
 
-	private IntegerProperty id = new SimpleIntegerProperty();
+	private StringProperty id = new SimpleStringProperty();
 	private StringProperty title = new SimpleStringProperty();
 	private ObjectProperty<LocalDate> dueDate = new SimpleObjectProperty<LocalDate>();
 	
 	public TodoElement() {
+		this.setId(UUID.randomUUID().toString());
 	}
 
-	public TodoElement(int id, String title, LocalDate dueDate) {
-		this.id.set(id);
+	public TodoElement(String id, String title, LocalDate dueDate) {
+		this.setId(id);
 		this.title.set(title);
 		this.dueDate.set(dueDate);
 	}
@@ -43,11 +43,11 @@ public class TodoElement {
 	}
 	
 	@XmlAttribute
-	public int getId() {
+	public String getId() {
 		return this.idProperty().get();
 	}
 
-	public void setId(int id) {
+	private void setId(String id) {
 		this.idProperty().set(id);
 	}
 	
@@ -71,7 +71,7 @@ public class TodoElement {
 		return this.title;
 	}
 	
-	public final IntegerProperty idProperty() {
+	public final StringProperty idProperty() {
 		return this.id;
 	}
 	
