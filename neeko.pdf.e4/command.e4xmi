@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_36AakJ1sEeeSc47x9c2NNQ">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_8xVV4J1sEeeSc47x9c2NNQ" featurename="children" parentElementId="test.app.app.menu.edit" positionInList="after:test.app.app.menuseparator.editmenu">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_QV0CIJ1tEeeSc47x9c2NNQ" elementId="neeko.pdf.e4.handledmenuitem.dummy" label="Dummy" command="_DbwUkJ1vEeeSc47x9c2NNQ"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_vXyP8J1uEeeSc47x9c2NNQ" featurename="commands" parentElementId="org.eclipse.e4.application">
+    <elements xsi:type="commands:Command" xmi:id="_DbwUkJ1vEeeSc47x9c2NNQ" elementId="neeko.pdf.e4.command.dummy" commandName="Dummy"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="__G3lsJ1zEeeSc47x9c2NNQ" featurename="handlers" parentElementId="org.eclipse.e4.application">
+    <elements xsi:type="commands:Handler" xmi:id="_CmHTwJ10EeeSc47x9c2NNQ" elementId="neeko.pdf.e4.handler.dummy" contributionURI="bundleclass://neeko.pdf.e4/neeko.pdf.e4.handler.DummyHandler" command="_DbwUkJ1vEeeSc47x9c2NNQ"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_evZnwJ12EeeSc47x9c2NNQ" featurename="snippets" parentElementId="org.eclipse.e4.application">
+    <elements xsi:type="basic:TrimmedWindow" xmi:id="_mgtygJ13EeeSc47x9c2NNQ" elementId="neeko.pdf.e4.trimmedwindow.dummywindow" selectedElement="_UFYDIJ14EeeSc47x9c2NNQ">
+      <children xsi:type="basic:Part" xmi:id="_UFYDIJ14EeeSc47x9c2NNQ" elementId="neeko.pdf.e4.part.dummy" contributionURI="bundleclass://neeko.pdf.e4/neeko.pdf.e4.part.DummyPart" closeable="true"/>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>
