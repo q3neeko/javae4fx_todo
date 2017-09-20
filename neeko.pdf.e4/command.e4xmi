@@ -14,4 +14,7 @@
       <children xsi:type="basic:Part" xmi:id="_UFYDIJ14EeeSc47x9c2NNQ" elementId="neeko.pdf.e4.part.dummy" contributionURI="bundleclass://neeko.pdf.e4/neeko.pdf.e4.part.DummyPart" closeable="true"/>
     </elements>
   </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_jRQTAJ4eEeeTxdxYYQrdDw" featurename="children" parentElementId="test.app.app.toolbar.trimbar">
+    <elements xsi:type="menu:HandledToolItem" xmi:id="_tGt8QJ4eEeeTxdxYYQrdDw" elementId="neeko.pdf.e4.handledtoolitem.dummy" label="Dummy" command="_DbwUkJ1vEeeSc47x9c2NNQ"/>
+  </fragments>
 </fragment:ModelFragments>

@@ -2,20 +2,27 @@ package neeko.pdf.ui;
 
 import javax.annotation.PostConstruct;
 
+import test.app.app.model.TodoElement;
+
 public class DummyVM {
 	
-//	@Inject @ContextValue(value = AppConstants.SELECTED_TODO) TodoElement selected;
-	
 	private String text;
+	private TodoElement selectedTodoElement;
 
 	@PostConstruct
 	void postContruct() throws Exception {
-		this.text = "<html><body contentEditable=\"true\"><h1>Hello!</h1></body></html>";
+		
 	}
 	
 	public String getText() {
-//		System.err.println("ViewModel");
 		return this.text;
 	}
 	
+	public void setSelectedTodoElement(TodoElement todo) {
+		this.selectedTodoElement = todo.copy();
+		if(this.selectedTodoElement!=null)
+			this.text = "Title: "+this.selectedTodoElement.getTitle()+"\nDate: "+this.selectedTodoElement.getDueDate();
+		else
+			this.text = "FAIL...";
+	}
 }

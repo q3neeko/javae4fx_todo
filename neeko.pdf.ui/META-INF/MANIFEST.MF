@@ -4,5 +4,7 @@ Bundle-Name: Ui
 Bundle-SymbolicName: neeko.pdf.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: javax.inject
+Require-Bundle: javax.inject,
+ test.app.app.model,
+ org.eclipse.fx.core.di
 Export-Package: neeko.pdf.ui
