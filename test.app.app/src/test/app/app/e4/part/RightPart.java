@@ -13,8 +13,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 import test.app.app.ui.AppConstants;
-import test.app.app.ui.FXMLUtil;
 import test.app.app.ui.right.RightVM;
+import utility.FXMLUtil;
 
 public class RightPart {
 	

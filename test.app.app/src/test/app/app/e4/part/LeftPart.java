@@ -14,8 +14,8 @@ import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 import test.app.app.datasource.local.TodoDataSource;
 import test.app.app.ui.AppConstants;
-import test.app.app.ui.FXMLUtil;
 import test.app.app.ui.left.LeftVM;
+import utility.FXMLUtil;
 
 public class LeftPart {
 

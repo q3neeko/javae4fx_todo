@@ -11,8 +11,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import test.app.app.model.TodoElement;
 import test.app.app.ui.AppConstants;
-import test.app.app.ui.FXMLUtil;
 import test.app.app.ui.edit.TodoEditService;
+import utility.FXMLUtil;
 
 public class TodoEditDialog extends Dialog<TodoElement> {
 	

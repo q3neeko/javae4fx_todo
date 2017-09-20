@@ -10,6 +10,7 @@
         <children xsi:type="menu:HandledMenuItem" xmi:id="_MonV4JWREeeQC5hcGA5pEw" elementId="test.app.app.handledmenuitem.new" label="New" command="_GOEUUJWREeeQC5hcGA5pEw"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_O9YN0JWREeeQC5hcGA5pEw" elementId="test.app.app.handledmenuitem.edit" label="Edit" command="_IRAccJWREeeQC5hcGA5pEw"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_XHBOcJWREeeQC5hcGA5pEw" elementId="test.app.app.handledmenuitem.delete" label="Delete" command="_JyTQEJWREeeQC5hcGA5pEw"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_MCt1QJ1tEeeSc47x9c2NNQ" elementId="test.app.app.menuseparator.editmenu"/>
       </children>
     </mainMenu>
     <trimBars xmi:id="_AnRq8JWREeeQC5hcGA5pEw" elementId="test.app.app.trimbar.0">

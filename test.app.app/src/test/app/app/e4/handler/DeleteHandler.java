@@ -36,8 +36,10 @@ public class DeleteHandler {
 //			TodoDeleteDialog dialog = ContextInjectionFactory.make(TodoDeleteDialog.class, child);
 //			dialog.showAndWait();
 			Alert alert = new Alert(AlertType.CONFIRMATION, "Delete " + selected.getTitle() + " " + selected.getDueDate() + " ?", ButtonType.YES, ButtonType.CANCEL);
+//			alert.initModality(Modality.APPLICATION_MODAL);
+//			alert.initOwner(owner); 
 			alert.showAndWait();
-
+			
 			if (alert.getResult() == ButtonType.YES) {
 			    service.start();
 			}
