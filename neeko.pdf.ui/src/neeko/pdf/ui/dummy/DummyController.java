@@ -1,4 +1,4 @@
-package neeko.pdf.ui;
+package neeko.pdf.ui.dummy;
 
 import javax.inject.Inject;
 

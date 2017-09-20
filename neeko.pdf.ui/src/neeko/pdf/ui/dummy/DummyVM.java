@@ -1,4 +1,4 @@
-package neeko.pdf.ui;
+package neeko.pdf.ui.dummy;
 
 import javax.annotation.PostConstruct;
 
@@ -11,7 +11,8 @@ public class DummyVM {
 
 	@PostConstruct
 	void postContruct() throws Exception {
-		
+		this.text = "";
+		this.selectedTodoElement = new TodoElement();
 	}
 	
 	public String getText() {

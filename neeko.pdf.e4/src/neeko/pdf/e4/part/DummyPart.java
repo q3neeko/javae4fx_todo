@@ -14,7 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 import neeko.pdf.ui.AppConstants;
-import neeko.pdf.ui.DummyVM;
+import neeko.pdf.ui.dummy.DummyVM;
 import test.app.app.model.TodoElement;
 import utility.FXMLUtil;
 
